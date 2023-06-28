@@ -41,8 +41,26 @@ class Solution:
 
 
 ##  45.Jump Game II
-For example, the array [2, 3, 1, 1, 4] 
-<img src="https://github.com/gyjbb/Leetcode-Python4/blob/main/Screen%20Shot%202023-05-17%20at%202.58.58%20PM.png" width="400" height="180">
-
-
+For example, the array [2, 3, 1, 1, 4] \
+<img src="https://github.com/gyjbb/LC-Python27/blob/main/Screen%20Shot%202023-06-28%20at%201.01.42%20AM.png" width="300" height="100">
+```python
+class Solution:
+    def jump(self, nums):
+        if len(nums) == 1:
+            return 0
+        
+        cur_distance = 0  # 当前覆盖最远距离下标
+        ans = 0  # 记录走的最大步数
+        next_distance = 0  # 下一步覆盖最远距离下标
+        
+        for i in range(len(nums)):
+            next_distance = max(nums[i] + i, next_distance)  # 更新下一步覆盖最远距离下标
+            if i == cur_distance:  # 遇到当前覆盖最远距离下标
+                ans += 1  # 需要走下一步
+                cur_distance = next_distance  # 更新当前覆盖最远距离下标（相当于加油了）
+                if next_distance >= len(nums) - 1:  # 当前覆盖最远距离达到数组末尾，不用再做ans++操作，直接结束
+                    break
+        
+        return ans
+```
 
