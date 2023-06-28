@@ -7,7 +7,7 @@ June 27, 2023  4h
 
 Congratulations!\
 This is the 27th day for leetcode python study. Today we will learn about the Greedy Algorithm!\
-The challenges today are about ~~using local optimums to get the global optimum.~~
+The challenges today are especially about the two jump game. All used the concept of largest coverage. But the last question is hard because it needs to record the current distance, which needs to be updated by the largest next distance! Hard to come up with so many variables and keep track of them.
 
 
 ## 122.Best Time to Buy and Sell Stock II
